@@ -30,7 +30,7 @@ The `request` method has three parameters:
 
 `resource` maps to one of the API methods, so for example the [list method for posts](http://disqus.com/api/docs/posts/list/) is written as `posts/list` in the argument.
 
-`parameters` are required but can an empty object (`{}`) if you don't have any.
+`parameters` are required but can be an empty object (`{}`) if you don't have any.
 
 `callback` will contain either the response of the call if it went successful. If you got an error, it will contain an `error` property with error information.
 
