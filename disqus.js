@@ -54,7 +54,7 @@ Disqus.prototype = {
     },
 
     _handleResponse : function(error, response, body, callback) {
-        if (response.statusCode === 200) {
+        if (response && response.statusCode === 200) {
             return body;
         } else {
             return {
