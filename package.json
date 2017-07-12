@@ -1,18 +1,31 @@
 {
-    "name": "disqus",
-    "author" : "Hay Kranen <hay@bykr.org>",
-    "homepage" : "http://github.com/rcurrier666/node-disqus",
-    "description": "Use the Disqus API with node",
-    "keywords": ["disqus", "api", "commenting"],
-    "version": "0.2.0",
-    "repository" : {
-        "type" : "git",
-        "url" : "http://github.com/rcurrier666/node-disqus.git"
-    },
-    "engine" : "node >= 0.5.1",
-    "main": "./disqus",
-    "dependencies" : {
-        "underscore" : "1.4.2",
-        "request" : "2.12.0"
-    }
+  "name": "disqus",
+  "author": "Hay Kranen <hay@bykr.org>",
+  "homepage": "http://github.com/rcurrier666/node-disqus",
+  "description": "Use the Disqus API with node",
+  "keywords": [
+    "disqus",
+    "api",
+    "commenting"
+  ],
+  "version": "0.3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rcurrier666/node-disqus.git"
+  },
+  "engine": "node >= 0.5.1",
+  "main": "./disqus",
+  "dependencies": {
+    "underscore": "1.4.2",
+    "request": "2.12.0",
+    "oauth": "^0.9.14"
+  },
+  "bugs": {
+    "url": "https://github.com/rcurrier666/node-disqus/issues"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
 }
