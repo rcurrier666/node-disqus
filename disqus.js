@@ -58,21 +58,38 @@ class Disqus {
   }
 
 // *********************************************************************** //
-  getOAuthAccessToken(code, uri, grantType, callback) {
+  getOAuthAccessToken(code, uri, callback) {
     var self = this;
     this.oauth2.getOAuthAccessToken(code, {
           client_id: self.conf.api_key,
           client_secret: self.conf.api_secret,
           redirect_uri: uri,
-          grant_type: grantType
+          grant_type: 'authorization_code'
     }, (err, access_token, refresh_token, results) => {
-        if (err) {
-            return callback(err);
-        } else {
-            self.conf.access_token = access_token;
-            return callback(null, access_token, refresh_token, results);
-        }
+      if (err) {
+        return callback(err);
+      } else {
+        self.conf.access_token = access_token;
+        return callback(null, access_token, refresh_token, results);
+      }
     });
+  }
+  
+// *********************************************************************** //
+  refreshOAuthAccessToken(refreshtoken, callback) {
+    var self = this;
+    this.oauth2.getOAuthAccessToken(refreshtoken, {
+          client_id: self.conf.api_key,
+          client_secret: self.conf.api_secret,
+          grant_type: 'refresh_token'
+    }, (err, access_token, refresh_token, results) => {
+      if (err) {
+        return callback(err);
+      } else {
+        self.conf.access_token = access_token;
+        return callback(null, access_token, refresh_token, results);
+      }
+    }); 
   }
 }
 
